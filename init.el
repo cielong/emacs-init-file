@@ -17,6 +17,12 @@
   (when (file-regular-p file)
     (load file)))
 
+;; Set up setting file
+(setq settings-dir (expand-file-name "setting" user-emacs-directory))
+(dolist (file (directory-files settings-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
+
 ;; Set appearance
 (require 'init-appearance)
 
@@ -57,5 +63,6 @@
 (eval-after-load 'markdown-mode '(require 'init-markdown))
 (eval-after-load 'julia-mode '(require 'init-julia))
 (eval-after-load 'web-mode '(require 'init-web))
+(eval-after-load 'js2-mode '(require 'init-javascript))
 (eval-after-load 'python '(require 'init-python))
 (eval-after-load 'java '(require 'init-java))

@@ -24,4 +24,7 @@
 ;; Turn on set goal column mode
 (put 'set-goal-column 'disabled nil)
 
+;; Turn on yasnippet
+(add-hook 'after-init-hook 'yas-global-mode)
+
 (provide 'init-basic)
