@@ -1,8 +1,7 @@
 (require 'init-program)
+(require 'python-flycheck-virtualenv)
 
-(setq python-shell-interpreter "/Users/cielo/anaconda/bin/ipython")
 (elpy-enable)
-(elpy-use-ipython)
 
 ;; Enable flymake
 (when (require 'flycheck nil t)
@@ -12,6 +11,10 @@
 ;; Using autopep8 as reference
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+;; Virtual Env enabled
+(setenv "WORKON_HOME" "/Users/cielo/anaconda/envs")
+(pyvenv-mode 1)
 
 ;; Customize tab
 (defun tab-customization ()

@@ -1,0 +1,5 @@
+(require 'init-program)
+(require 'ac-js2)
+(add-hook 'js2-mode-hook 'ac-js2)
+(setq js2-highlight-level 3)
+(provide 'init-javascript)

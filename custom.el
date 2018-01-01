@@ -30,10 +30,11 @@
     ("SCCS" "RCS" "CVS" "MCVS" ".src" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" ".DS_Store")))
  '(package-selected-packages
    (quote
-    (json-mode pdf-tools nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
+    (rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode pdf-tools nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
  '(pdf-info-epdfinfo-error-filename "/tmp/epdfinfo.log")
  '(pdf-info-epdfinfo-program
    "/Users/cielo/.emacs.d/elpa/pdf-tools-20171012.2226/epdfinfo")
+ '(python-shell-interpreter "python")
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

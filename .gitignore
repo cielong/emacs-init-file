@@ -4,3 +4,7 @@ ido.last
 elpa/*
 eshell/*
 themes/*
+**/.python-environments
+network-security.data
+**/url
+**/auto-save-list
