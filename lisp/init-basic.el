@@ -3,8 +3,6 @@
 (when is-mac
   (require-package 'exec-path-from-shell)
   (exec-path-from-shell-initialize)
-  ;; Remap Set mark command to C-c m
-  (global-set-key (kbd "C-c m") 'set-mark-command)
   ;; Set Back-up directory & version control
   (setq
    backup-by-copying t 

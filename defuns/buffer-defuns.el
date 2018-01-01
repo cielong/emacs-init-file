@@ -15,5 +15,3 @@ Including indent-buffer, which should not be called automatically on save."
   (untabify-buffer)
   (delete-trailing-whitespace)
   (indent-buffer))
-;; Perform general cleanup.
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
