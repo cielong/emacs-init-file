@@ -1,5 +1,4 @@
 (require 'init-program)
-(require 'python-flycheck-virtualenv)
 
 (elpy-enable)
 

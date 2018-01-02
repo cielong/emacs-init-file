@@ -7,6 +7,6 @@
 (add-hook 'markdown-mode-hook 'indent-guide-mode)
 (add-hook 'before-save-hook 'time-stamp)
 
-;; Configuring flyspell to avoid syntax check in math, code block
+;; TODO: Configuring flyspell to avoid syntax check in math, code block
 
 (provide 'init-markdown)
