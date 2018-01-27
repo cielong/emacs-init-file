@@ -1,5 +1,5 @@
 (flyspell-mode 1)
-(setq markdown-command "/usr/local/bin/pandoc -s --mathjax")
+(setq markdown-command "/usr/local/bin/pandoc -s --mathjax --meta pagetitle='live-preview'")
 (setq markdown-enable-math t)
 (add-hook 'markdown-mode-hook 'pandoc-mode)
 (add-hook 'markdown-mode-hook flyspell-mode)

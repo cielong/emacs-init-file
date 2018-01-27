@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: array
+# key: array
+# --
+$$\begin{aligned}
+  \begin{array}{l}
+  $0
+  \end{array}
+  \end{aligned}$$

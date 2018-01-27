@@ -23,6 +23,12 @@
   (when (file-regular-p file)
     (load file)))
 
+;; Set up macro file
+(setq macro-dir (expand-file-name "macros" user-emacs-directory))
+(dolist (file (directory-files macro-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
+
 ;; Set appearance
 (require 'init-appearance)
 

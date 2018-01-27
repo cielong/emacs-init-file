@@ -1,9 +1,11 @@
 (require 'imenu)
 ;; Useful Function in Emacs
+;; Unntabify buffer
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
 
+;; Indent buffer
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))

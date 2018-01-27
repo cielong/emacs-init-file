@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: runtime
+# key: runtime
+# --
+current=$(date "+%s")
+$1
+(( running_time_$0=$(date "+%s") - $current ))
