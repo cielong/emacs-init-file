@@ -6,5 +6,9 @@ eshell/*
 themes/*
 **/.python-environments
 network-security.data
+snippets/*
+srecode-map.el
 **/url
 **/auto-save-list
+meghanada/*
+ac-comphist.dat
