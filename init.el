@@ -54,7 +54,6 @@
 (add-to-list 'auto-mode-alist '("\\.mdown\\'" . markdown-mode))
 
 ;;    Pdf file
-(pdf-tools-install)
 (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
 
 ;;    Shell file (zsh-theme)
@@ -70,5 +69,6 @@
 (eval-after-load 'julia-mode '(require 'init-julia))
 (eval-after-load 'web-mode '(require 'init-web))
 (eval-after-load 'js2-mode '(require 'init-javascript))
+(eval-after-load 'cc-mode '(require 'init-java))
 (eval-after-load 'python '(require 'init-python))
-(eval-after-load 'java '(require 'init-java))
+

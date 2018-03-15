@@ -3,6 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-auto-complete t)
+ '(eclim-executable "/Users/cielo/.p2/pool/plugins/org.eclim_2.7.2/bin/eclim")
+ '(eclim-problems-show-pos t)
+ '(eclimd-autostart-with-default-workspace t)
+ '(eclimd-default-workspace "~/Documents/Java/")
  '(elpy-modules
    (quote
     (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults)))
@@ -34,8 +39,11 @@
  '(markdown-xhtml-header-content "<link rel=\"stylesheet\" href=\"tufte.css\"/>")
  '(package-selected-packages
    (quote
-    (multiple-cursors rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode pdf-tools nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
+    (go-mode company-emacs-eclim ac-emacs-eclim eclim meghanada pdf-tools multiple-cursors rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
  '(pdf-info-epdfinfo-error-filename "/tmp/epdfinfo.log")
+ '(pdf-info-epdfinfo-program
+   "/Users/cielo/.emacs.d/elpa/pdf-tools-20180109.1234/build/server/")
+ '(pdf-tools-handle-upgrades nil)
  '(python-shell-interpreter "python")
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
@@ -43,4 +51,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(eclim-problems-highlight-error-face ((t (:foreground "red" :weight bold))))
+ '(eclim-problems-highlight-warning-face ((t (:foreground "yellow" :weight bold))))
  '(indent-guide-face ((t (:foreground "#535353" :slant oblique)))))
