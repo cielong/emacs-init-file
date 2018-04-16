@@ -17,7 +17,6 @@
 
 ;; Customize tab
 (defun tab-customization ()
-  (setq indent-tabs-mode nil)
   (setq tab-stop-list (number-sequence 4 200 4))
   (setq tab-width 4)
   (setq indent-line-function 'insert-tab))
