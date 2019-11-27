@@ -52,7 +52,12 @@
 
 
 ;; Load extra file pattern that wants to be omitted
-(defvar dired-omit-files-config "~/.emacs.d/.dired-omit-files")
+(defcustom dired-omit-files-config "~/.emacs.d/.dired-omit-files"
+  "The file path of the config which specifies all the extra regexp file
+patterns to be omitted"
+  :type 'string
+  :group 'dired-x
+  )
 
 (when (file-exists-p dired-omit-files-config)
   (progn
