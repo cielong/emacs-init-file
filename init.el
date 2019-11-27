@@ -71,4 +71,3 @@
 (eval-after-load 'js2-mode '(require 'init-javascript))
 (eval-after-load 'cc-mode '(require 'init-java))
 (eval-after-load 'python '(require 'init-python))
-

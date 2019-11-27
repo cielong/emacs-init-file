@@ -9,6 +9,7 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'prog-mode-hook 'electric-pair-mode)
 (add-hook 'prog-mode-hook 'electric-layout-mode)
+(global-auto-complete-mode t)
 
 ;; Highlight 80 column using whitespace mode
 (require 'whitespace)

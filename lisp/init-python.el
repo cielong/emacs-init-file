@@ -11,9 +11,15 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-;; Virtual Env enabled
-(setenv "WORKON_HOME" "/Users/cielo/anaconda/envs")
-(pyvenv-mode 1)
+;; Virtual Env enabled (pipenv)
+;; (setenv "WORKON_HOME" "/Users/cielo/anaconda/envs")
+;; (pyvenv-mode 1)
+(use-package pipenv
+  :hook (python-mode . pipenv-mode)
+  :init
+  (setq
+   pipenv-projectile-after-switch-function
+   #'pipenv-projectile-after-switch-extended))
 
 ;; Customize tab
 (defun tab-customization ()
