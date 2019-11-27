@@ -11,29 +11,35 @@
 ;; Set up load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; Set up & Load self-defined funciton file
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
-
-;; Set up setting file
-(setq settings-dir (expand-file-name "setting" user-emacs-directory))
-(dolist (file (directory-files settings-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
-
-;; Set up macro file
-(setq macro-dir (expand-file-name "macros" user-emacs-directory))
-(dolist (file (directory-files macro-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
+;; Set up packages repo
+(require 'init-elpa)
 
 ;; Set appearance
 (require 'init-appearance)
 
-;; Set up packages repo
-(require 'init-elpa)
+;; Set up & Load self-defined funciton file
+(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
+(if (file-exists-p defuns-dir)
+  (dolist (file (directory-files defuns-dir t "\\w+"))
+    (when (file-regular-p file)
+      (load file)))
+  (make-directory defuns-dir))
+
+;; Set up setting file
+(setq settings-dir (expand-file-name "setting" user-emacs-directory))
+(if (file-exists-p settings-dir)
+  (dolist (file (directory-files settings-dir t "\\w+"))
+    (when (file-regular-p file)
+      (load file)))
+  (make-directory settings-dir))
+
+;; Set up macro file
+(setq macro-dir (expand-file-name "macros" user-emacs-directory))
+(if (file-exists-p macro-dir)
+  (dolist (file (directory-files macro-dir t "\\w+"))
+    (when (file-regular-p file)
+      (load file)))
+  (make-directory macro-dir))
 
 ;; Basic Customization
 ;;   * Check Operating System (Remap key)

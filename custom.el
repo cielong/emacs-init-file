@@ -14,15 +14,15 @@
  '(ensime-sem-high-faces
    (quote
     ((var :foreground "#9876aa" :underline
-	  (:style wave :color "yellow"))
+          (:style wave :color "yellow"))
      (val :foreground "#9876aa")
      (varField :slant italic)
      (valField :foreground "#9876aa" :slant italic)
      (functionCall :foreground "#a9b7c6")
      (implicitConversion :underline
-			 (:color "#808080"))
+                         (:color "#808080"))
      (implicitParams :underline
-		     (:color "#808080"))
+                     (:color "#808080"))
      (operator :foreground "#cc7832")
      (param :foreground "#a9b7c6")
      (class :foreground "#4e807d")
@@ -39,7 +39,7 @@
  '(markdown-xhtml-header-content "<link rel=\"stylesheet\" href=\"tufte.css\"/>")
  '(package-selected-packages
    (quote
-    (dumb-jump use-package-ensure-system-package yaml-mode sbt-mode scala-mode docker dockerfile-mode use-package pipenv string-inflection tern-auto-complete js2-refactor xref-js2 company-tern tern tide go-mode company-emacs-eclim ac-emacs-eclim eclim meghanada pdf-tools multiple-cursors rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
+    (company yasnippet ls-lisp dired-x yas-global-mode auto-complete ivy ivy-mode dumb-jump use-package-ensure-system-package yaml-mode sbt-mode scala-mode docker dockerfile-mode use-package pipenv string-inflection tern-auto-complete js2-refactor xref-js2 company-tern tern tide go-mode company-emacs-eclim ac-emacs-eclim eclim meghanada pdf-tools multiple-cursors rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
  '(pdf-info-epdfinfo-error-filename "/tmp/epdfinfo.log")
  '(pdf-info-epdfinfo-program
    "/Users/cielo/.emacs.d/elpa/pdf-tools-20180109.1234/build/server/")

@@ -1,8 +1,11 @@
 ;; Check system-type, and if its mac
 (setq is-mac (equal system-type 'darwin))
 (when is-mac
-  (require-package 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+  (use-package exec-path-from-shell
+    :ensure t
+    :config
+      (exec-path-from-shell-initialize)
+    ))
 
 ;; Set Back-up directory & version control on all platform
 (setq
@@ -15,8 +18,14 @@
 
 ;; Using company mode for all the mode
 (setq ispell-program-name "/usr/local/bin/ispell")
-(add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'after-init-hook 'ido-mode)
+(use-package company
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))
+(use-package ido
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'ido-mode))
 
 ;; Automatically save compilation
 (setq compilation-ask-about-save nil)
@@ -25,14 +34,22 @@
 (put 'set-goal-column 'disabled nil)
 
 ;; Turn on yasnippet
-(add-hook 'after-init-hook 'yas-global-mode)
+(use-package yasnippet
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'yas-global-mode))
+
 
 ;; Turn on dired-omit-mode
 ;; Reset dired-omit-fiels to only files begin with '.'
 ;; excluding special directory '.' and '..'
-(require 'dired-x)
-(setq-default dired-omit-files-p t) ; Buffer-local variable
-(setq dired-omit-files "^\\.[^.]+$")
+(use-package dired-x
+  :ensure nil
+  :config
+  (setq-default dired-omit-files-p t) ; Buffer-local variable
+  (setq dired-omit-files "^\\.[^.]+$"))
+
+
 
 ;; Load extra file pattern that wants to be omitted
 (defvar dired-omit-files-config "~/.emacs.d/.dired-omit-files")
@@ -47,9 +64,11 @@
 	      (split-string (buffer-string) "\n" t)))))
 
 ;; Sort directory first in dired
-(require 'ls-lisp)
-(setq ls-lisp-dirs-first t)
-(setq ls-lisp-use-insert-directory-program nil)
+(use-package ls-lisp
+  :ensure nil
+  :config
+  (setq ls-lisp-dirs-first t)
+  (setq ls-lisp-use-insert-directory-program nil))
 
 ;; Toggle dired-sidebar
 (use-package dired-sidebar
