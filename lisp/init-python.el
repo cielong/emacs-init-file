@@ -1,6 +1,9 @@
 (require 'init-program)
 
-(elpy-enable)
+(use-package elpy
+  :ensure t
+  :init
+  (advice-add 'python-mode :before 'elpy-enable))
 
 ;; Enable flymake
 (when (require 'flycheck nil t)

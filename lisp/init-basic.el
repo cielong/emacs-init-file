@@ -53,7 +53,7 @@
 
 ;; Toggle dired-sidebar
 (use-package dired-sidebar
-  :bind (("C-c f" . dired-sidebar-toggle-sidebar))
+  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar))
   :ensure t
   :commands (dired-sidebar-toggle-sidebar)
   :init
@@ -72,7 +72,7 @@
 
 ;; Toggle ibuffer-sidebar by default
 (use-package ibuffer-sidebar
-  :bind (("C-c b" . ibuffer-sidebar-toggle-sidebar))
+  :bind (("C-c C-b" . ibuffer-sidebar-toggle-sidebar))
   :ensure t
   :commands (ibuffer-sidebar-toggle-sidebar)
   :config

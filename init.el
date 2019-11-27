@@ -65,6 +65,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Language Specific setup files
+(eval-after-load 'emacs-lisp-mode (require 'init-lisp))
 (eval-after-load 'markdown-mode '(require 'init-markdown))
 (eval-after-load 'julia-mode '(require 'init-julia))
 (eval-after-load 'web-mode '(require 'init-web))
