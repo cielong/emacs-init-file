@@ -14,15 +14,15 @@
  '(ensime-sem-high-faces
    (quote
     ((var :foreground "#9876aa" :underline
-          (:style wave :color "yellow"))
+	  (:style wave :color "yellow"))
      (val :foreground "#9876aa")
      (varField :slant italic)
      (valField :foreground "#9876aa" :slant italic)
      (functionCall :foreground "#a9b7c6")
      (implicitConversion :underline
-                         (:color "#808080"))
+			 (:color "#808080"))
      (implicitParams :underline
-                     (:color "#808080"))
+		     (:color "#808080"))
      (operator :foreground "#cc7832")
      (param :foreground "#a9b7c6")
      (class :foreground "#4e807d")
