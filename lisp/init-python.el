@@ -1,7 +1,15 @@
 (require 'init-program)
 
+(use-package python
+  :config
+  (unbind-key "C-c C-f" python-mode-map)
+)
+
 (use-package elpy
   :ensure t
+  :config
+  (unbind-key "C-c C-f" elpy-mode-map)
+  (unbind-key "C-c C-b" elpy-mode-map)
   :init
   (advice-add 'python-mode :before 'elpy-enable)
 )
