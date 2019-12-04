@@ -3,7 +3,8 @@
 (use-package elpy
   :ensure t
   :init
-  (advice-add 'python-mode :before 'elpy-enable))
+  (advice-add 'python-mode :before 'elpy-enable)
+)
 
 ;; Enable flymake
 (when (require 'flycheck nil t)
@@ -11,13 +12,18 @@
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;; Using autopep8 as reference
-(require 'py-autopep8)
-(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+(use-package py-autopep8
+  :ensure t
+  :commands (py-autopep8-enable-on-save)
+  :init
+  (add-hook 'elpy-mode 'py-autopep8-enable-on-save)
+)
 
 ;; Virtual Env enabled (pipenv)
 ;; (setenv "WORKON_HOME" "/Users/cielo/anaconda/envs")
 ;; (pyvenv-mode 1)
 (use-package pipenv
+  :ensure t
   :hook (python-mode . pipenv-mode)
   :init
   (setq
