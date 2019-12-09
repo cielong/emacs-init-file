@@ -61,7 +61,8 @@
 (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
 
 ;;    Shell file (zsh-theme)
-(add-to-list 'auto-mode-alist '("\\.zsh-theme\\'" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.sh\\'" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh-theme\\'" . shell-script-mode))
 
 ;;    Web development
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -70,6 +71,7 @@
 
 ;; Language Specific setup files
 (eval-after-load 'emacs-lisp-mode (require 'init-lisp))
+(eval-after-load 'sh-mode (require 'init-shell))
 (eval-after-load 'markdown-mode '(require 'init-markdown))
 (eval-after-load 'julia-mode '(require 'init-julia))
 (eval-after-load 'web-mode '(require 'init-web))
