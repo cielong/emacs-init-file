@@ -52,6 +52,10 @@
   (load custom-file))
 
 ;; Set up file extensions
+;;    GIT commit
+(add-to-list 'auto-mode-alist '("\\.git\\/COMMIT_EDITMSG\\'" . (lambda()
+				(require 'init-git-commit))))
+
 ;;    Markdown file
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
