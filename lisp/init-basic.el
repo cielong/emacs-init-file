@@ -39,7 +39,6 @@
   :init
   (add-hook 'after-init-hook 'yas-global-mode))
 
-
 ;; Turn on dired-omit-mode
 ;; Reset dired-omit-fiels to only files begin with '.'
 ;; excluding special directory '.' and '..'
@@ -49,8 +48,6 @@
   (setq-default dired-omit-files-p t) ; Buffer-local variable
   (setq dired-omit-files "^\\.[^.]+$"))
 
-
-
 ;; Load extra file pattern that wants to be omitted
 (defcustom dired-omit-files-config "~/.emacs.d/.dired-omit-files"
   "The file path of the config which specifies all the extra regexp file
@@ -59,14 +56,30 @@ patterns to be omitted"
   :group 'dired-x
   )
 
-(when (file-exists-p dired-omit-files-config)
-  (progn
-    (with-temp-buffer
-      (insert-file-contents dired-omit-files-config)
-      (mapcar (lambda (file-pattern)
-		(setq dired-omit-files (concat dired-omit-files "\\|"))
-		(setq dired-omit-files (concat dired-omit-files file-pattern)))
-	      (split-string (buffer-string) "\n" t)))))
+(defun set-dired-omit-files ()
+  "Set dired omit files to omit all the hidden files including patterns defined
+in 'dired-omit-files-config' and excluding '.' & '..'"
+  (setq dired-omit-files "^\\.[^.]+$")
+  (when (file-exists-p dired-omit-files-config)
+    (progn
+      (with-temp-buffer
+	(insert-file-contents dired-omit-files-config)
+        (mapcar (lambda (file-pattern)
+		  (setq dired-omit-files (concat dired-omit-files "\\|"))
+		  (setq dired-omit-files (concat dired-omit-files file-pattern)))
+		(split-string (buffer-string) "\n" t))))))
+
+(defun reset-dired-omit-files ()
+  "Reset dired omit files to not omit anything."
+  (setq dired-omit-files "^$"))
+
+(defun toggle-omit-files ()
+  "Show/hide hidden files"
+  (interactive)
+  (if (string= dired-omit-files "^$")
+    (set-dired-omit-files)
+    (reset-dired-omit-files))
+  (revert-buffer))
 
 ;; Sort directory first in dired
 (use-package ls-lisp
@@ -77,10 +90,13 @@ patterns to be omitted"
 
 ;; Toggle dired-sidebar
 (use-package dired-sidebar
-  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar))
+  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar)
+	 ((:map dired-sidebar-mode-map) ("C-c C-t" . toggle-omit-files)))
   :ensure t
   :commands (dired-sidebar-toggle-sidebar)
   :init
+  (add-hook 'dired-sidebar-mode-hook
+	    'set-dired-omit-files)
   (add-hook 'dired-sidebar-mode-hook
             (lambda ()
               (unless (file-remote-p default-directory)
