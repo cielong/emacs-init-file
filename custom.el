@@ -39,7 +39,7 @@
  '(markdown-xhtml-header-content "<link rel=\"stylesheet\" href=\"tufte.css\"/>")
  '(package-selected-packages
    (quote
-    (shell-script company yasnippet ls-lisp dired-x yas-global-mode auto-complete ivy ivy-mode dumb-jump use-package-ensure-system-package yaml-mode sbt-mode scala-mode docker dockerfile-mode use-package pipenv string-inflection tern-auto-complete js2-refactor xref-js2 company-tern tern tide go-mode company-emacs-eclim ac-emacs-eclim eclim meghanada pdf-tools multiple-cursors rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
+    (magit shell-script company yasnippet ls-lisp dired-x yas-global-mode auto-complete ivy ivy-mode dumb-jump use-package-ensure-system-package yaml-mode sbt-mode scala-mode docker dockerfile-mode use-package pipenv string-inflection tern-auto-complete js2-refactor xref-js2 company-tern tern tide go-mode company-emacs-eclim ac-emacs-eclim eclim meghanada pdf-tools multiple-cursors rainbow-mode emmet-mode ac-js2 column-marker conda anaconda-mode json-mode nyan-mode web-mode py-autopep8 protobuf-mode projectile pandoc-mode multi-term matlab-mode markdown-toc magithub julia-mode jedi-direx indent-guide impatient-mode flyspell-correct flycheck-julia exec-path-from-shell elpy ein dracula-theme darcula-theme better-defaults)))
  '(pdf-info-epdfinfo-error-filename "/tmp/epdfinfo.log")
  '(pdf-info-epdfinfo-program
    "/Users/cielo/.emacs.d/elpa/pdf-tools-20180109.1234/build/server/")
