@@ -12,3 +12,6 @@ srecode-map.el
 meghanada/*
 ac-comphist.dat
 **/elpy
+
+# Git message template
+.gitmessage
