@@ -9,8 +9,10 @@ This init file is mainly for python-programming and markdown-text.
   * Allow customization of hidden files in dired-mode
 * Pre-populate git commit message with appropriate git template.
   * Allow simple scripting in git template, currently support auto-replacement
-  of the following variable:
+  of the following variable (including the `${XXX}` symbol):
     1. ${BRANCH_NAME}: current branch name
+    2. ${BRANCH_DESCRIPTION}: current branch description (see [Git Branch#Edit Description](https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---edit-description))
+    3. ${CURSOR}: the final cursor position
 
 ## Getting Start
 ### Prerequisites
