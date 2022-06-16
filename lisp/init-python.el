@@ -28,8 +28,6 @@
 )
 
 ;; Virtual Env enabled (pipenv)
-;; (setenv "WORKON_HOME" "/Users/cielo/anaconda/envs")
-;; (pyvenv-mode 1)
 (use-package pipenv
   :ensure t
   :hook (python-mode . pipenv-mode)

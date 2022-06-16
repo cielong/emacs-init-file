@@ -39,11 +39,17 @@
   :init
   (add-hook 'after-init-hook 'yas-global-mode))
 
+;; Install magit if not installed
+(use-package magit
+  :ensure t)
+
 ;; Turn on dired-omit-mode
 ;; Reset dired-omit-fiels to only files begin with '.'
 ;; excluding special directory '.' and '..'
 (use-package dired-x
   :ensure nil
+  :init
+  (add-hook 'dired-mode-hook 'dired-omit-mode)
   :config
   (setq-default dired-omit-files-p t) ; Buffer-local variable
   (setq dired-omit-files "^\\.[^.]+$"))
@@ -105,7 +111,7 @@ in 'dired-omit-files-config' and excluding '.' & '..'"
   (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
   (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
 
-  (setq dired-sidebar-subtree-line-prefix "__")
+  (setq dired-sidebar-subtree-line-prefix "  ")
   (setq dired-sidebar-theme 'ascii)
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))

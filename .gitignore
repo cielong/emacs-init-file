@@ -1,6 +1,9 @@
 *~
 ido.last
+
+# Installed packages
 elpa/*
+
 eshell/*
 themes/*
 **/.python-environments
@@ -15,3 +18,8 @@ ac-comphist.dat
 
 # Git message template
 .gitmessage
+## Magit
+transient/*
+
+# Machine generated Lisp files
+custom.el

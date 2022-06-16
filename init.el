@@ -51,7 +51,10 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+;; ------------------------
 ;; Set up file extensions
+;; ------------------------
+
 ;;    GIT commit
 (add-to-list 'auto-mode-alist '("\\.git\\/COMMIT_EDITMSG\\'" . (lambda()
 				(require 'init-git-commit))))
@@ -73,12 +76,13 @@
 (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+;; -----------------------------
 ;; Language Specific setup files
+;; -----------------------------
 (eval-after-load 'emacs-lisp-mode (require 'init-lisp))
 (eval-after-load 'sh-mode (require 'init-shell))
 (eval-after-load 'markdown-mode '(require 'init-markdown))
 (eval-after-load 'julia-mode '(require 'init-julia))
 (eval-after-load 'web-mode '(require 'init-web))
 (eval-after-load 'js2-mode '(require 'init-javascript))
-(eval-after-load 'cc-mode '(require 'init-java))
 (eval-after-load 'python '(require 'init-python))
