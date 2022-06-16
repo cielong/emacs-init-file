@@ -96,7 +96,11 @@ in 'dired-omit-files-config' and excluding '.' & '..'"
 
 ;; Toggle dired-sidebar
 (use-package dired-sidebar
-  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar)
+  ;; The default `dired-sidebar-toggle-sidebar' method will find the project
+  ;; root, however, sometimes project root will be reset to non-parent of
+  ;; current directory and a.k.a cause side effect if the project is way too
+  ;; large
+  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar-with-current-directory)
 	 ((:map dired-sidebar-mode-map) ("C-c C-t" . toggle-omit-files)))
   :ensure t
   :commands (dired-sidebar-toggle-sidebar)
@@ -114,7 +118,14 @@ in 'dired-omit-files-config' and excluding '.' & '..'"
   (setq dired-sidebar-subtree-line-prefix "  ")
   (setq dired-sidebar-theme 'ascii)
   (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t))
+  (setq dired-sidebar-use-custom-font t)
+
+  (defun dired-sidebar-toggle-sidebar-with-current-directory()
+    "Incur `dired-sidebar-toggle-sidebar' with the current directory"
+    (interactive)
+    (dired-sidebar-toggle-sidebar (file-name-directory buffer-file-name))
+    )
+  )
 
 ;; Toggle ibuffer-sidebar by default
 (use-package ibuffer-sidebar
