@@ -1,25 +1,48 @@
-*~
-ido.last
+# ---------------------------------------------------------------------------- #
+# Emacs
+# ---------------------------------------------------------------------------- #
 
-# Installed packages
+## Cached files
+*~
+
+## Installed packages
 elpa/*
 
+## Projectile
+projectile-bookmarks.eld
+
+# ---------------------------------------------------------------------------- #
+# Python
+# ---------------------------------------------------------------------------- #
+
+**/elpy
+**/.python-environments
+
+# ---------------------------------------------------------------------------- #
+# Git message template
+# ---------------------------------------------------------------------------- #
+
+.gitmessage
+
+## Magit
+**/transient
+
+# ---------------------------------------------------------------------------- #
+# Machine generated Lisp files
+# ---------------------------------------------------------------------------- #
+
+custom.el
+
+# ---------------------------------------------------------------------------- #
+# Others
+# Todo: cleanup these files
+# ---------------------------------------------------------------------------- #
+ido.last
 eshell/*
 themes/*
-**/.python-environments
 network-security.data
 snippets/*
 srecode-map.el
 **/url
 **/auto-save-list
-meghanada/*
 ac-comphist.dat
-**/elpy
-
-# Git message template
-.gitmessage
-## Magit
-transient/*
-
-# Machine generated Lisp files
-custom.el

@@ -43,6 +43,15 @@
 (use-package magit
   :ensure t)
 
+;; Install projectile
+(use-package projectile
+  :ensure t
+  :pin melpa-stable
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map)))
+
 ;; Turn on dired-omit-mode
 ;; Reset dired-omit-fiels to only files begin with '.'
 ;; excluding special directory '.' and '..'
@@ -96,11 +105,7 @@ in 'dired-omit-files-config' and excluding '.' & '..'"
 
 ;; Toggle dired-sidebar
 (use-package dired-sidebar
-  ;; The default `dired-sidebar-toggle-sidebar' method will find the project
-  ;; root, however, sometimes project root will be reset to non-parent of
-  ;; current directory and a.k.a cause side effect if the project is way too
-  ;; large
-  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar-with-current-directory)
+  :bind (("C-c C-f" . dired-sidebar-toggle-sidebar)
 	 ((:map dired-sidebar-mode-map) ("C-c C-t" . toggle-omit-files)))
   :ensure t
   :commands (dired-sidebar-toggle-sidebar)
@@ -118,14 +123,7 @@ in 'dired-omit-files-config' and excluding '.' & '..'"
   (setq dired-sidebar-subtree-line-prefix "  ")
   (setq dired-sidebar-theme 'ascii)
   (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t)
-
-  (defun dired-sidebar-toggle-sidebar-with-current-directory()
-    "Incur `dired-sidebar-toggle-sidebar' with the current directory"
-    (interactive)
-    (dired-sidebar-toggle-sidebar (file-name-directory buffer-file-name))
-    )
-  )
+  (setq dired-sidebar-use-custom-font t))
 
 ;; Toggle ibuffer-sidebar by default
 (use-package ibuffer-sidebar
