@@ -1,10 +1,9 @@
-# My emacs init repo
-This is a repo for storing and sharing my emacs init file, I create my init file
-structure mainly based on [Purcell's init file](https://github.com/purcell/emacs.d)
-and [margnar's init file](https://github.com/magnars/.emacs.d).  
-This init file is mainly for python-programming and markdown-text.  
+# Emacs Init
+A repo for my Emacs init settings.
 
 ## Features
+* Machine specific settings (***local.el***)
+  * Allow customization for different machines (e.g. loading internal libs)
 * Dired-sidebar(`C-c C-f`) & Buffer-sidebar(`C-c C-b`)
   * Allow customization of hidden files in dired-mode
 * Pre-populate git commit message with appropriate git template.
@@ -19,4 +18,5 @@ This init file is mainly for python-programming and markdown-text.
 * Emacs for MAC >= 26.2
 
 ### Installation
-* Using `git clone git@github.com:cielong/emacs-init-file.git` to download the repo, and put it into your home directory.
+1. Using `git clone git@github.com:cielong/emacs-init-file.git` to download the repo
+2. Copy all the files into the ***~/.emacs.d*** directory.

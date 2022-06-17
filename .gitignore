@@ -2,6 +2,11 @@
 # Emacs
 # ---------------------------------------------------------------------------- #
 
+## Local specific settings
+### Machine specific settings can be added in this file
+### This is used to load any internal tools, if any
+local.el
+
 ## Cached files
 *~
 

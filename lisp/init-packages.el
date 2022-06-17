@@ -14,4 +14,4 @@
   (package-install 'use-package))
 
 (require 'use-package)
-(provide 'init-elpa)
+(provide 'init-packages)
