@@ -1,4 +1,5 @@
-(require 'cl)
+;; Common Lisp Library
+(require 'cl-lib)
 
 (defun* expand-commit-message()
   "Search and replace variables in git commit template when running `git commit'.
@@ -36,8 +37,8 @@
 
     ;; move to ${CURSOR}
     (if (re-search-backward "${CURSOR}" nil t)
-      (replace-match "" t t)
-      )
+	(replace-match "" t t)
+        (goto-char (point-min)))
     ))
 
 (add-hook 'find-file-hook 'expand-commit-message)

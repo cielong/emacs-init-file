@@ -18,4 +18,4 @@
   :bind (("C-c u" . string-inflection-all-cycle))
   :ensure t)
 
-(provide 'key-bind-setting)
+(provide 'key-bindings)

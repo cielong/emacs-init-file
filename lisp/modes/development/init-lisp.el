@@ -39,7 +39,7 @@
          ("C-c x" . dumb-jump-go-prefer-external)
          ("C-c z" . dumb-jump-go-prefer-external-other-window))
   :after (ivy)
-  :config (setq dumb-jump-selector 'ivy) ;; (setq dumb-jump-selector 'helm)
+  :config (setq dumb-jump-selector 'ivy)
   :ensure t
   )
 
