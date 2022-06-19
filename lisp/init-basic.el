@@ -18,12 +18,21 @@
 
 ;; Auto Completion
 ;; Using company mode for all the mode
-(setq ispell-program-name "/usr/local/bin/ispell")
 (use-package company
   :ensure t
   :pin melpa-stable
+  :bind
+  ;; Invoke the next company backend, so that another backend candidates can be
+  ;; generated, see http://company-mode.github.io/manual/Backends.html#Backends
+  ("C-c C-/" . 'company-other-backend)
   :init
-  (add-hook 'after-init-hook 'global-company-mode))
+  (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  ;; General Company Frontend Configs (tooltip config)
+  ;; Wrap the tooltip, i.e. next of last items is the first one
+  (setq company-selection-wrap-around t)
+  ;; Flip the tooltip, i.e. list the candidates starting the near point
+  (setq company-tooltip-flip-when-above t))
 
 ;; Ido-mode
 ;; Used to improve the experience for finding files
