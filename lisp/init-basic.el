@@ -24,6 +24,9 @@
   :pin melpa-stable
   :init
   (add-hook 'after-init-hook 'global-company-mode))
+
+;; Ido-mode
+;; Used to improve the experience for finding files
 (use-package ido
   :ensure t
   :pin melpa-stable

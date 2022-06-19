@@ -21,13 +21,6 @@
   (global-whitespace-mode t)
   )
 
-;; Auto completion
-(use-package auto-complete
-  :ensure t
-  :config
-  (global-auto-complete-mode t)
-  (ac-set-trigger-key "TAB"))
-
 ;; Dump Jump for code-navigation
 (use-package ivy
   :ensure t)
