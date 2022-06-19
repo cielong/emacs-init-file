@@ -45,9 +45,6 @@
 ;; Automatically save compilation
 (setq compilation-ask-about-save nil)
 
-;; Turn on set goal column mode
-(put 'set-goal-column 'disabled nil)
-
 ;; Turn on yasnippet
 (use-package yasnippet
   :ensure t
@@ -69,6 +66,7 @@
   :bind (:map projectile-mode-map
               ("C-c p" . projectile-command-map)))
 
+(require 'init-windows)
 (require 'init-sidebar)
 
 (provide 'init-basic)
