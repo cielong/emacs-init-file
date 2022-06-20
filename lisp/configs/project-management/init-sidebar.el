@@ -13,7 +13,7 @@
 (use-package treemacs
   :ensure t
   :defer t
-  :bind
+  :bind*
   ("C-c C-f" . treemacs-display-current-project-exclusively)
   :config
   (treemacs-follow-mode t)
@@ -21,6 +21,15 @@
   (treemacs-hide-gitignored-files-mode t)
 
   (setq-default treemacs-show-hidden-files nil)
+
+  ;; (defun cielong-treemacs-display-project (path)
+  ;;   "Add project from `PATH' to `treemacs'.
+  ;;    Assume `path' is a local path."
+  ;;   (let* ((dir-name (file-name-nondirectory
+  ;;                     (directory-file-name path)))
+  ;;       (unless (treemacs-current-workspace)
+  ;;         (treemacs--find-workspace))
+  ;;       (treemacs-do-add-project-to-workspace path name)))
   )
 
 (use-package treemacs-projectile

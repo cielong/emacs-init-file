@@ -4,7 +4,9 @@
   (use-package exec-path-from-shell
     :ensure t
     :config
-      (exec-path-from-shell-initialize)
+    (setq-default mac-option-modifier
+		  '(:ordinary meta :function meta :mouse meta))
+    (exec-path-from-shell-initialize)
     ))
 
 ;; Set Back-up directory & version control on all platform
@@ -20,12 +22,15 @@
 ;; See https://anuragpeshne.github.io/essays/emacsSpeed.html
 (setq gc-cons-threshold 100000000)
 
+;; Enable line number
+(add-hook 'emacs-startup-hook 'global-linum-mode)
+
 ;; Auto Completion
 ;; Using company mode for all the mode
 (use-package company
   :ensure t
   :pin melpa-stable
-  :bind
+  :bind*
   ;; Invoke the next company backend, so that another backend candidates can be
   ;; generated, see http://company-mode.github.io/manual/Backends.html#Backends
   ("C-c C-o" . 'company-other-backend)
@@ -60,7 +65,7 @@
 (use-package magit
   :ensure t
   :pin melpa-stable
-  :bind ("C-x g" . magit-status))
+  :bind* ("C-x g" . magit-status))
 
 (require 'init-windows)
 (require 'init-sidebar)
