@@ -1,7 +1,10 @@
 (use-package markdown-mode
   :ensure t
   :pin melpa-stable
-  :mode ("README\\.md\\'" . gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.markdown\\'" . markdown-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.mdown\\'" . markdown-mode))
   )
 
 (add-hook 'markdown-mode-hook 'visual-line-mode)
@@ -44,7 +47,8 @@
       (setq markdown-enable-math t))
   (message "Disable pandoc-mode because executable `pandoc' not found"))
 
-;; Update timestamp in the buffer
-(add-hook 'before-save-hook 'time-stamp)
+;; Update timestamp in the buffer and make it buffer-local
+(add-hook 'markdown-mode-hook
+          '(lambda () (add-hook 'before-save-hook 'time-stamp nil t)))
 
 (provide 'init-markdown)

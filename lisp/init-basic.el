@@ -16,6 +16,10 @@
  kept-old-versions 2
  version-control t)
 
+;; Set GC-threshold
+;; See https://anuragpeshne.github.io/essays/emacsSpeed.html
+(setq gc-cons-threshold 100000000)
+
 ;; Auto Completion
 ;; Using company mode for all the mode
 (use-package company
@@ -24,7 +28,7 @@
   :bind
   ;; Invoke the next company backend, so that another backend candidates can be
   ;; generated, see http://company-mode.github.io/manual/Backends.html#Backends
-  ("C-c C-/" . 'company-other-backend)
+  ("C-c C-o" . 'company-other-backend)
   :init
   (add-hook 'after-init-hook 'global-company-mode)
   :config
@@ -55,18 +59,12 @@
 ;; Install magit if not installed
 (use-package magit
   :ensure t
-  :pin melpa-stable)
-
-;; Install projectile
-(use-package projectile
-  :ensure t
   :pin melpa-stable
-  :init
-  (projectile-mode +1)
-  :bind (:map projectile-mode-map
-              ("C-c p" . projectile-command-map)))
+  :bind ("C-x g" . magit-status))
 
 (require 'init-windows)
 (require 'init-sidebar)
+
+(require 'init-markdown)
 
 (provide 'init-basic)

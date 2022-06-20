@@ -15,6 +15,10 @@ elpa/*
 
 ## Projectile
 projectile-bookmarks.eld
+projectile.cache
+
+## Treemacs
+.cache
 
 # ---------------------------------------------------------------------------- #
 # Python

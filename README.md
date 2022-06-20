@@ -9,9 +9,9 @@ A repo for my Emacs init settings.
 * Pre-populate git commit message with appropriate git template.
   * Allow simple scripting in git template, currently support auto-replacement
   of the following variable (including the `${XXX}` symbol):
-    1. ${BRANCH_NAME}: current branch name
-    2. ${BRANCH_DESCRIPTION}: current branch description (see [Git Branch#Edit Description](https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---edit-description))
-    3. ${CURSOR}: the final cursor position
+    1. `${BRANCH_NAME}`: current branch name
+    2. `${BRANCH_DESCRIPTION}`: current branch description (see [Git Branch#Edit Description](https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---edit-description))
+    3. `${CURSOR}`: the final cursor position
 
 ## Getting Start
 ### Prerequisites
